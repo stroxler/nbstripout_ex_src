@@ -49,6 +49,9 @@ e.g. if they have not installed `nbstripout` in our case).
 Once a filter is set up, we can tell git to use it by creating an attribute
 pairing in `.gitattributes`.
 
+The git attribute does not require full `**/*` style globbing; the example
+repo includes a notebook in a subdirectory to verify this.
+
 ### Assumptions about your system
 
 Note: many guides to using nbstripout suggest using an absolute path to

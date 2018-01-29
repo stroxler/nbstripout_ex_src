@@ -37,7 +37,7 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
-            batch_nbconvert ~/repo ~/built --parallel 2
+            batch_nbconvert exec-copy ~/repo ~/built --parallel 2
 
       - store_artifacts:
           path: ~/built

@@ -23,8 +23,8 @@ jobs:
       - run:
           name: install dependencies
           command: |
-            python3 -m venv venv
-            . venv/bin/activate
+            python3 -m venv ~/venv
+            . ~/venv/bin/activate
             pip install nbconvert pandas numpy matplotlib jupyter_client
             pip install git+https://github.com/stroxler/batch_nbconvert
 
@@ -36,7 +36,7 @@ jobs:
       - run:
           name: run tests
           command: |
-            . venv/bin/activate
+            . ~/venv/bin/activate
             batch_nbconvert exec-copy ~/repo ~/built --parallel 2
 
       - store_artifacts:

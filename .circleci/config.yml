@@ -21,12 +21,22 @@ jobs:
           - v1-dependencies-
 
       - run:
-          name: install dependencies
+          name: create virtualenv with dependencies
           command: |
             python3 -m venv ~/venv
             . ~/venv/bin/activate
             pip -q install nbconvert pandas numpy matplotlib jupyter_client ipykernel
-            python -m ipykernel install --name python3
+
+      - run:
+          name: set up jupyter kernel
+          command: |
+            . ~/venv/bin/activate
+            python -m ipykernel install --name python3 --user
+
+      - run:
+          name: install batch_nbconvert
+          command: |
+            . ~/venv/bin/activate
             pip install git+https://github.com/stroxler/batch_nbconvert
 
       - run:

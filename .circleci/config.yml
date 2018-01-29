@@ -26,7 +26,7 @@ jobs:
             python3 -m venv venv
             . venv/bin/activate
             pip install nbconvert pandas numpy matplotlib
-            pip install pip install git+https://github.com/stroxler/batch_nbconvert
+            pip install git+https://github.com/stroxler/batch_nbconvert
 
       # run tests!
       # this example uses Django's built-in test-runner

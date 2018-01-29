@@ -25,16 +25,12 @@ jobs:
           command: |
             python3 -m venv ~/venv
             . ~/venv/bin/activate
-            pip install nbconvert pandas numpy matplotlib jupyter_client
+            pip install nbconvert pandas numpy matplotlib jupyter_client ipykernel
+            python -m ipykernel install --name python3
             pip install git+https://github.com/stroxler/batch_nbconvert
 
-      # run tests!
-      # this example uses Django's built-in test-runner
-      # other common Python testing frameworks include pytest and nose
-      # https://pytest.org
-      # https://nose.readthedocs.io
       - run:
-          name: run tests
+          name: build notebooks
           command: |
             . ~/venv/bin/activate
             batch_nbconvert exec-copy ~/repo ~/built --parallel 2

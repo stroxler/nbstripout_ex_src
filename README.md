@@ -16,7 +16,7 @@ The following snippet will create a filter `ipynb_stripout` that uses
 ```bash
 cat >> .git/config <<EOF
 [filter "ipynb_stripout"]
-	clean = python -m nbstripout
+	clean = python -m nbstripout -t
 	smudge = cat
 	required = true
 EOF
